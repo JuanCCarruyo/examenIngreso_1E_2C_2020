@@ -16,6 +16,18 @@ function mostrar()
 	let temporada;
 	let cantidad=0;
 
+	let B=0; // a) contadores
+	let C=0;
+	let S=0;
+	let masViajado="";
+
+	let masPasajeros=0; // b)
+	let sexoMasPasajeros="";
+
+	let contViajeInv=0;  //c)
+	let acumPersonaInv=0;
+	let promedio=0;
+
 	let x="s";
 
 	while(x=="s"||x=="si"){
@@ -30,11 +42,76 @@ function mostrar()
 
 		do{
 			temporada = prompt("Ingrese la temporada:").toLowerCase(); //estoy tomando "otono" como temporada valida porque no tiene 'ñ' mi teclado
-		}while (!(temporada == "otoño" || temporada == "otono" || temporada == "invierno" || ))
+		}while (!(temporada == "otoño" || temporada == "otono" || temporada == "invierno" || temporada == "verano" || temporada == "primavera"));
+
+		do{
+			cantidad = parseInt(prompt("Ingrese la cantidad de personas que viajan:"));
+		}while (isNaN(cantidad) || cantidad < 1); //no es valido un viaje con menos de una persona
+
+		switch(lugar){  // a)
+
+			case "bariloche":
+				B++;
+				break;
+
+			case "cataratas":
+				C++;
+				break;
+
+			case "salta":
+				S++;
+				break;
+		}
 
 
+		// b)
+		if (cantidad > masPasajeros){ //no hace falta flag porque la cantidad siempre va a ser > 0
+			masPasajeros = cantidad;
+			sexoMasPasajeros = sexo;
+		}
 
+		// c)
+		if (temporada == "invierno"){
+			contViajeInv++;
+			acumPersonaInv = acumPersonaInv + cantidad;
+		}
 
+	} //end While
 
+	// a)
+	if (B > C && B > S){
+		masViajado = "Bariloche";
+	}
+	else if (C > B && C > S){
+		masViajado = "Cataratas";
+	}
+	else{
+		masViajado = "Salta";
+	}
+
+	switch(sexoMasPasajeros){  // cambiando sexo ingresado si es "F" o "M" por "Femenino" y "Masculino"
+		case "f":
+		case "femenino":
+			sexoMasPasajeros = "femenino";
+			break;
+		
+		case "m":
+		case "masculino":
+			sexoMasPasajeros = "masculino";
+			break;
+	}
+
+	promedio = acumPersonaInv / contViajeInv; //c)
+
+	document.write("a) El lugar mas elegido es "+masViajado+"<br>"+"<br>");
+
+	document.write("b) El sexo del titular que lleva más pasajeros es "+sexoMasPasajeros+"<br>"+"<br>");
+
+	if (promedio == 1){
+		document.write("c) El promedio de personas por viaje, que viajan en invierno es de "+promedio+" persona."+"<br>"+"<br>"); 
+		// si el promedio es de una persona para que quede en singular la respuesta
+	}
+	else{
+		document.write("c) El promedio de personas por viaje, que viajan en invierno es de "+promedio+" personas."+"<br>"+"<br>");
 	}
 }

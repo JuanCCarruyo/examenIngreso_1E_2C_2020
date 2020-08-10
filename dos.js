@@ -35,7 +35,7 @@ c)la marca del más barato de los sólidos
 
     
     do{
-      peso = parseFloat(prompt("Ingrese el peso: (en kg)")); //mayor a 0.1kg pero no puede pesar 0kg
+      peso = parseFloat(prompt("Ingrese el peso: (en kg)")); //mayor a 0.0marc1kg pero no puede pesar 0kg
     }while (isNaN(peso) || peso < 0.01);
 
     do{

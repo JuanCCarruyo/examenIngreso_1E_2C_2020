@@ -65,6 +65,6 @@ function mostrar()
 
 	document.write("b) La edad promedio es de "+(acumEdad/contPersonas)+" años"+"<br>"+"<br>");
 
-	document.write("c) El hombre mas pesado es "+nombreHombreMasPesado)
+	document.write("c) El hombre mas pesado es "+nombreHombreMasPesado);
 
 }
