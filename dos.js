@@ -47,8 +47,8 @@ c)la marca del más barato de los sólidos
     switch(tipo){
       case "liquido":
       case "líquido":
-        if (flagL == 0 || precio > precioMaxLiquido){
-          precioMaxLiquido = precio;
+        if (flagL == 0 || precio > precioMaxLiquido){  // me di cuenta luego de revisar que no es necesario este flag porque el primer
+          precioMaxLiquido = precio;                   // precio siempre es > 0 pero ya habia marcado como completado
           marcaMaxLiquido = marca;
           flagL = 1;
         }
