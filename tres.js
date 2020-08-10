@@ -76,6 +76,7 @@ function mostrar()
 			acumPersonaInv = acumPersonaInv + cantidad;
 		}
 
+		x = prompt("Desea ingresar otro viaje? (s/n)").toLowerCase();
 	} //end While
 
 	// a)
