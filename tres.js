@@ -11,5 +11,30 @@ c)el promedio de personas por viaje,  que viajan en invierno
 */
 function mostrar()
 {
-	alert("tres");
+	let sexo;
+	let lugar;
+	let temporada;
+	let cantidad=0;
+
+	let x="s";
+
+	while(x=="s"||x=="si"){
+
+		do{
+			sexo = prompt("Ingrese el sexo del titular: (f/m)").toLowerCase();
+		}while (!(sexo == "f" || sexo == "m" || sexo == "femenino" || sexo == "masculino"));
+
+		do{
+			lugar = prompt("Ingrese el lugar de vacaciones: (bariloche, cataratas o salta)").toLowerCase();
+		}while (!(lugar == "bariloche" || lugar == "cataratas" || lugar == "salta"));
+
+		do{
+			temporada = prompt("Ingrese la temporada:").toLowerCase(); //estoy tomando "otono" como temporada valida porque no tiene 'ñ' mi teclado
+		}while (!(temporada == "otoño" || temporada == "otono" || temporada == "invierno" || ))
+
+
+
+
+
+	}
 }

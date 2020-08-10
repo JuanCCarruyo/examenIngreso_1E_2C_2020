@@ -65,15 +65,14 @@ c)la marca del más barato de los sólidos
 
     }
 
-
-
-
-
-
-
-
     x = prompt("Desea ingresar otro producto? (s/n)").toLowerCase(); 
   }
+
+  document.write("a) El peso total de la compra es de "+acumPeso+"kg."+"<br>"+"<br>");
+
+  document.write("b) La marca del más caro de los líquidos es "+marcaMaxLiquido+"<br>"+"<br>");
+
+  document.write("c) La marca del más barato de los sólidos es "+marcaMinSolido);
 
 
 
